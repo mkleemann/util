@@ -166,7 +166,7 @@ typedef struct { //! pointer of data direction register
 // definition of debug printouts
 #ifdef ___DEBUG_LEVEL___
 
-   #include "../uart/uart.h"
+   #include "uart/uart.h"
 //! initialize debug channel
    #define DEBUG_INIT()       uart_init()
 
@@ -175,10 +175,14 @@ typedef struct { //! pointer of data direction register
 
 #else  // ___DEBUG_LEVEL___
 
-//! nothing to do...
-   #define  DEBUG_PRINT(s)
+//! empty macro to initialize debug channel
+   #define DEBUG_INIT()
+
+//! empty macro for debug output
+   #define DEBUG_PRINT(s)
 
 #endif // not defined ___DEBUG_LEVEL___
 
 
 #endif /* UTIL_H_ */
+
